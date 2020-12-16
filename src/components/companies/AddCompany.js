@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 export class AddCompany extends Component {
     state = {
+        id: 1,
         companyName: '',
-        cuit: Number,
+        cuit: 2,
         email: '',
         fiscalAddress: ''
     }
 
-    onNameChange = (e) => this.setState({ companyName: e.target.value });
-    onCuitChange = (e) => this.setState({ cuit: e.target.value });
-    onEmailChange = (e) => this.setState({ companyName: e.target.value });
-    onAddressChange = (e) => this.setState({ companyName: e.target.value });
+    onNameChange = (e) => this.setState({ [e.target.name]: e.target.value });
+   
     onSubmit = (e) => {
         e.preventDefault();
         this.props.AddCompany(this.state.title);
@@ -21,18 +20,15 @@ export class AddCompany extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit} style={{display: 'flex'}}>
-               <input type="text" name="companyName" placeholder="Company Name" style={{flex: '10', padding: '5px'}} value={this.state.companyName} onChange={this.onNameChange} />
-               <input type="number" name="cuit" placeholder="Cuit..." style={{flex: '10', padding: '5px'}} value={this.state.cuit} onChange={this.onCuitChange} />
-               <input type="text" name="email" placeholder="Contact Email" style={{flex: '10', padding: '5px'}} value={this.state.email} onChange={this.onEmailChange} />
-               <input type="text" name="fiscalAddress" placeholder="Fiscal Address" style={{flex: '10', padding: '5px'}} value={this.state.fiscalAddress} onChange={this.onAddressChange} />
-               <input type="submit" value="Submit" className="submitbtn" style={{flex: '1'}}/> 
+               <input type="text" name="companyName" placeholder="Company Name" style={{flex: '10', padding: '5px'}} value={this.state.companyName} onChange={this.onChange} />
+               <input type="number" name="cuit" placeholder="Cuit..." style={{flex: '10', padding: '5px'}} value={this.state.cuit} onChange={this.onChange} />
+               <input type="text" name="email" placeholder="Contact Email" style={{flex: '10', padding: '5px'}} value={this.state.email} onChange={this.onChange} />
+               <input type="text" name="fiscalAddress" placeholder="Fiscal Address" style={{flex: '10', padding: '5px'}} value={this.state.fiscalAddress} onChange={this.onChange} />
+               <input type="submit" value="Submit" className="submitbtn" style={{flex: '1'}} className="submitBtn" /> 
             </form>
         )
     }
 }
 
-AddCompany.propTypes = {
-    AddCompany: PropTypes.func.isRequired
-}  
 
 export default AddCompany

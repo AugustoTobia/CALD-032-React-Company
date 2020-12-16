@@ -13,3 +13,51 @@ a{
   color: #333;
   text-decoration: none;
 }
+
+header{
+  display: flex;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.submitBtn{
+  display: inline-block;
+  border: none;
+  background-color: #555;
+  color: #ffffff;
+  padding: 7px 20px;
+}
+.Company{
+  display:flex;
+  flex-flow: row nowrap;
+  padding: 15px;
+  background-color: #434;
+  border-bottom: 1px solid #646;
+  color: #fff
+}
+.table{
+  display: flex;
+  flex-flow: row nowrap;
+  border-bottom: 5px solid #ee6622;
+}
+.tableTitle{
+  flex-basis:20%;
+  color:#fff;
+  background-color: #434;
+  font-weight: 700;
+}
+.data{
+  flex-basis: 20%;
+  text-align: center;
+}
+.xBtn{
+  align-self: flex-end;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 10%;
+  background: #ee6622;
+  color: #fff;  
+  float: right
+}
