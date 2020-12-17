@@ -1,63 +1,145 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-body{
+
+html, body{
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
 a{
   color: #333;
   text-decoration: none;
 }
+.container{
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.App{
+display: flex;
+flex: 1 1 auto;
+flex-flow: row nowrap;
+}
+
+.App aside {
+  flex-flow: column nowrap;
+  height: 100%;
+  flex: 1 1 auto;
+  width: 300px;
+  background-color:#161822;
+}
+.caldar {
+  position: relative;
+  padding: 42px;
+  top: -30px;
+  background-color:#2d3249;
+  border-bottom: 2px solid #3d4259;
+  font-size: 30px;
+  color: #ffffff;
+}
+.asideList ul li {
+  position: relative;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.asideList a {
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.asideList a:hover {
+  color: #e6541a;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 
 header{
   display: flex;
-  background: #333;
+  flex: 1;
+  max-height: 150px;
+  background: #e6541a;
   color: #fff;
   text-align: center;
   padding: 10px;
 }
-
 .submitBtn{
+  flex:1;
   display: inline-block;
   border: none;
   background-color: #555;
   color: #ffffff;
   padding: 7px 20px;
 }
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+
+.table table {
+  flex-basis: 98%;
+  padding: 40px;
+  margin: 30px 0;
+  border: 1px solid #f1f1f1;
+  border-radius: 4px;
+  box-shadow: 4px 4px 10px #999999;
+}
+.table th {
+  padding-bottom: 15px;
+  color: #e6541a;
+  font-size: 20px;
+}
+
+td {
+  position: relative;
+  text-align: start;
+}
+
+.tbody td {
+  position: relative;
+  height: 40px;
+  text-align: center;
+  left: 5px;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.buttons{
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  font-weight: 700;
+}
+
+
 .Company{
   display:flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
   padding: 15px;
-  background-color: #434;
-  border-bottom: 1px solid #646;
-  color: #fff
+  border-bottom: 1px solid #aaa;
 }
-.table{
-  display: flex;
-  flex-flow: row nowrap;
-  border-bottom: 5px solid #ee6622;
-}
-.tableTitle{
-  flex-basis:20%;
-  color:#fff;
-  background-color: #434;
-  font-weight: 700;
-}
-.data{
-  flex-basis: 20%;
-  text-align: center;
-}
+
+
 .xBtn{
-  align-self: flex-end;
+  margin: 0 15px;
   padding: 2px 8px;
   border: none;
   border-radius: 10%;
   background: #ee6622;
   color: #fff;  
-  float: right
+}
+
+.input{
+  flex: 10;
+  padding: 5px;
 }
