@@ -10,19 +10,19 @@ export class Aside extends Component {
                 <div className="asideList">
                     <ul>
                         <li>
-                            <a href>Buildings</a>
+                            <a href=".">Buildings</a>
                         </li>
                         <li>
-                            <a href>Boilers</a>
+                            <a href=".">Boilers</a>
                         </li>
                         <li>
-                            <a href>Technicians</a>
+                            <a href=".">Technicians</a>
                         </li>
                         <li>
-                            <a href>Reports</a>
+                            <a href=".">Reports</a>
                         </li>
                         <li>
-                            <a href>Settings</a>
+                            <a href=".">Settings</a>
                         </li>
                     </ul>
                 </div>

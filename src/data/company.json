@@ -1,0 +1,81 @@
+[    
+    {
+        "id":1,
+        "companyName":"Blogtag",
+        "email":"tcadle0@sogou.com",
+        "cuit":1,
+        "fiscalAddress":"6737 Spohn Center"
+    },
+
+    {
+        "id":2,
+        "companyName":"Edgeify",
+        "email":"cyter1@nasa.gov",
+        "cuit":2,
+        "fiscalAddress":"175 Buena Vista Parkway"
+    },
+
+    {
+        "id":3,
+        "companyName":"Topicware",
+        "email":"bchalfant2@multiply.com",
+        "cuit":3,
+        "fiscalAddress":"53 Forster Trail"
+    },
+
+    {
+        "id":4,
+        "companyName":"Skaboo",
+        "email":"wmacneilly3@digg.com",
+        "cuit":4,
+        "fiscalAddress":"9972 Maryland Circle"
+    },
+
+    {
+        "id":5,
+        "companyName":"Browsebug",
+        "email":"lsnaddon4@dyndns.org",
+        "cuit":5,
+        "fiscalAddress":"2477 Spaight Street"
+    },
+
+    {
+        "id":6,
+        "companyName":"Meetz",
+        "email":"trymell5@imdb.com",
+        "cuit":6,
+        "fiscalAddress":"3450 Bayside Avenue"
+    },
+
+    {
+        "id":7,
+        "companyName":"Youbridge",
+        "email":"gallcoat6@nifty.com",
+        "cuit":7,
+        "fiscalAddress":"045 Red Cloud Plaza"
+    },
+
+    {
+        "id":8,
+        "companyName":"Thoughtblab",
+        "email":"ktarborn7@seesaa.net",
+        "cuit":8,
+        "fiscalAddress":"27851 Magdeline Place"
+    },
+
+    {
+        "id":9,
+        "companyName":"Voomm",
+        "email":"jdarington8@furl.net",
+        "cuit":9,
+        "fiscalAddress":"6681 Rusk Drive"
+    },
+
+    {
+        "id":10,
+        "companyName":"Miboo",
+        "email":"bdavaux9@phoca.cz",
+        "cuit":10,
+        "fiscalAddress":"527 Farmco Point"
+    }
+]

@@ -26,8 +26,6 @@ flex-flow: row nowrap;
 
 .App aside {
   flex-flow: column nowrap;
-  height: 100%;
-  flex: 1 1 auto;
   width: 300px;
   background-color:#161822;
 }

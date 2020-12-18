@@ -1,30 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import CompanyData from './CompanyData';
 import propTypes from 'prop-types';
 
 export class Company extends Component {
     render() {
-        const {id, companyName, cuit, email, fiscalAddress} = this.props.company;
-
-        return (
-            <tr className="tbody" >
-                <td className="data">{companyName} </td>
-                <td className="data">{email}</td>
-                <td className="data">{fiscalAddress}</td>
-                <td className="data">{cuit}</td>
-                <td className="data">{id}</td>
-                <td className="data">
-                    <button className="xBtn" onClick={this.props.delCompany.bind(this, id)}>EDIT</button>
-                </td>
-                <td className="buttons">
-                    <button className="xBtn" onClick={this.props.delCompany.bind(this, id)}>X</button>
-                </td>
-            </tr>
+        return(
+        <div className="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>Email</th>
+                        <th>Fiscal Address</th>
+                        <th>Cuit</th>
+                        <th>Company ID</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.props.companies.map((company) => 
+                    <CompanyData key={company.id} company={company} selectCompany={this.props.selectCompany} delCompany={this.props.delCompany} />
+                )}
+                </tbody>
+            </table>
+        </div>
         )
     }
 }
 
 Company.propTypes = {
-    company: propTypes.object.isRequired,
+    companies: propTypes.array.isRequired,
 }
 
 export default Company

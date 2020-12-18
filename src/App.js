@@ -1,36 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
+import { v4 as uuid} from 'uuid';
+import companies from './data/company.json'
+
 import Header from './components/layout/Header';
 import AddCompany from './components/companies/AddCompany';
-import Companies from './components/companies/Companies';
+import Company from './components/companies/Company';
 import Aside from './components/layout/Aside';
-import { v4 as uuid} from 'uuid';
+import EditCompany from './components/companies/EditCompany'
 
 class App extends Component {
 
   state = {
-    companies: [
-      {
-        companyName: 'test1',
-        email: 'email1',
-        fiscalAddress: 'test1',
-        cuit: 1111,
-        id: uuid()
-      },
-      {
-        companyName: 'test1',
-        email: 'email1',
-        fiscalAddress: 'test1',
-        cuit: 1111,
-        id: uuid()
-      },
-      {
-        companyName: 'test1',
-        email: 'email1',
-        fiscalAddress: 'test1',
-        cuit: 1111,
-        id: uuid()
-      },    ]
+    companies: companies,
+    company:{},
+    selected: false
   }
 
   //Add company
@@ -46,6 +30,20 @@ class App extends Component {
     })
   }
 
+  selectCompany = (id) =>{
+    const selected = this.state.companies.find(company => company.id === id);
+    this.setState({company: selected});
+  }
+ 
+  editCompany = (edited) => {
+    const companyIndex = this.state.companies.map((company) => 
+      company.id
+    ).indexOf(edited.id)
+    const companiesUpdate = this.state.companies;
+    companiesUpdate[companyIndex]=edited;
+    this.setState({companies: companiesUpdate})
+  }
+  
   //delete Company
   delCompany = (id) => (
     this.setState({companies: [...this.state.companies.filter(company => company.id !==id)]})
@@ -53,16 +51,15 @@ class App extends Component {
 
   render() {
     return (
-      <container classn>
       <div className="App">
         <Aside />
         <div className="main">
           <Header />
           <AddCompany addCompany={this.addCompany} />
-          <Companies companies={this.state.companies} delCompany={this.delCompany} />
+          <Company companies={this.state.companies} selectCompany= {this.selectCompany} delCompany={this.delCompany} />
+          <EditCompany editCompany= {this.editCompany} companySelected={this.state.company} selected={this.state.selected} />
         </div>
       </div>
-      </container>
     );
   }
 }
