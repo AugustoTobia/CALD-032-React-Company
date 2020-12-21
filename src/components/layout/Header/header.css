@@ -1,0 +1,9 @@
+header{
+    display: flex;
+    flex: 1;
+    max-height: 150px;
+    background: #e6541a;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }

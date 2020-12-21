@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import { v4 as uuid} from 'uuid';
+
 import companies from './data/company.json'
 
-import Header from './components/layout/Header';
-import AddCompany from './components/companies/AddCompany';
-import Company from './components/companies/Company';
-import Aside from './components/layout/Aside';
-import EditCompany from './components/companies/EditCompany'
+import Header from './components/layout/Header/Header';
+import Aside from './components/layout/Aside/Aside';
+import AddCompany from './components/companies/AddCompany/AddCompany';
+import Company from './components/companies/Company/Company';
+import EditCompany from './components/companies/EditCompany/EditCompany';
 
 class App extends Component {
 
@@ -17,7 +18,6 @@ class App extends Component {
     selected: false
   }
 
-  //Add company
   addCompany = ([companyName, email, cuit, fiscalAddress]) => {
     const newCompany = {
       id: uuid(),
@@ -25,12 +25,13 @@ class App extends Component {
       email,
       fiscalAddress,
       cuit,
-    }
-    this.setState({companies: [...this.state.companies, newCompany]
-    })
+    };
+    this.setState({
+      companies: [...this.state.companies, newCompany]
+    });
   }
 
-  selectCompany = (id) =>{
+  selectCompany = (id) => {
     const selected = this.state.companies.find(company => company.id === id);
     this.setState({company: selected});
   }
@@ -38,15 +39,18 @@ class App extends Component {
   editCompany = (edited) => {
     const companyIndex = this.state.companies.map((company) => 
       company.id
-    ).indexOf(edited.id)
+    ).indexOf(edited.id);
+
     const companiesUpdate = this.state.companies;
-    companiesUpdate[companyIndex]=edited;
+    companiesUpdate[companyIndex] = edited;
+
     this.setState({companies: companiesUpdate})
   }
   
-  //delete Company
   delCompany = (id) => (
-    this.setState({companies: [...this.state.companies.filter(company => company.id !==id)]})
+    this.setState({
+      companies: [...this.state.companies.filter(company => company.id !==id)]
+    })
   )
 
   render() {
